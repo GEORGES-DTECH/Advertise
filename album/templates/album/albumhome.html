@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{%for photo in photos.all%}
+
+<div class="row pt-2 ">
+
+    <div class="col=6 " onclick="window.location='{%url 'photo_detail' photo.id%}';" style="cursor: pointer;">
+       
+        <img src="{{photo.photo.url}}" height="150" width="150" class="img-fluid img-thumbnail "/>
+
+
+
+    </div>
+
+    <div class="col=6" onclick="window.location='{%url 'photo_detail' photo.id%}';" style="cursor: pointer;">
+        <b style="color: blue;">Family member</b> 
+        <br>
+      
+       <b > Name:</b>{{photo.family_member_name}}
+
+        <br>
+        
+        
+        <b>Location:</b>{{photo.location}}
+      
+         <br>
+      
+        <b>Contact:</b>{{photo.contact}}
+       
+
+        <br>
+     
+        <b>Biography:</b>{{photo.summary}}
+
+         <br>
+     
+        <b>Uploader:</b>{{photo.author}}
+
+        
+         <br>
+     
+        <b>Date:</b>{{photo.date_posted|date:'F d,Y'}}
+         <br>
+         <br>
+         <hr style="background-color: black;">
+         <br>
+
+    </div>
+    
+
+
+</div>
+
+
+
+
+
+
+{%endfor%}
+
+{% endblock content %}

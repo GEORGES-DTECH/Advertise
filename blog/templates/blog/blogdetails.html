@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+<div class="" >
+
+    
+      <b>Title:</b> <b style="color: blue;">{{blog.title}}</b>
+      <hr>
+   
+
+   
+</div>    
+
+
+<div class="row">
+
+<div class=" col-8 well well-sm " >
+
+  <p>{{blog.body}}</p> 
+
+   
+</div>    
+
+</div>
+
+<div class="row">
+
+    <div class="col-8" >
+      <b>Author:</b> {{blog.author}}
+
+    </div>
+
+   
+</div>    
+
+
+<div class="row">
+
+    <div class="col-8" >
+      <b>Date:</b> {{blog.date_posted|date:'F d,Y'}}
+
+    </div>
+
+   
+</div>    
+<hr>
+
+  
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'blog_update' blog.id%}">Update blog</a>
+<br>
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'blog_delete' blog.id%}">Delete blog</a>
+
+{% endblock content %}
+

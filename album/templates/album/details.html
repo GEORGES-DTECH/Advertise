@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row"  >
+     <div class="col-8" ">
+
+   
+        <img src="{{photo.photo.url}}" height="200" width="200" class="img-fluid img-thumbnail"/>
+    
+      </div>
+
+    
+
+   
+</div>
+
+
+<div class="row"  >
+
+    <div class="col-8" >
+      <b > Member name:</b>{{photo.family_member_name}}
+
+    </div>
+
+   
+
+   
+</div>
+
+    
+<div class="row">
+
+    <div class="col-8" >
+      <b>Location:</b> {{photo.location}}
+
+    </div>
+
+   
+</div>
+
+
+<div class="row" >
+
+    <div class="col-8" >
+      <b>Contact:</b> {{photo.contact}}
+
+    </div>
+
+   
+</div>    
+
+
+
+<div class="row"  >
+
+    <div class="col-8" >
+      <b>Biography:</b> <p>{{photo.description}}</p>
+
+    </div>
+
+   
+</div>    
+
+
+<div class="row">
+
+    <div class="col-8" >
+      <b>Uploader:</b> {{photo.author}}
+
+    </div>
+
+   
+</div>    
+
+
+<div class="row">
+
+    <div class="col-8" >
+      <b>Date:</b> {{photo.date_posted|date:'F d,Y'}}
+
+    </div>
+
+   
+</div>    
+
+
+  
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'photo_update' photo.id%}">Update biography</a>
+<br>
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'photo_delete' photo.id%}">Delete biography</a>
+
+{% endblock content %}
+

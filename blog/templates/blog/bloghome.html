@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{%for blog in blogs%}
+
+<div class="row" >
+
+    <div class="col-8" onclick="window.location='{%url 'blog_detail' blog.id%}';" style="cursor: pointer;" >
+      
+      <b>Title:</b> <b style="color: blue;">{{blog.title}}</b>
+      <hr>
+   
+
+
+    </div>
+
+   
+</div>    
+
+
+
+<div class="row">
+
+<div class=" col-12 " onclick="window.location='{%url 'blog_detail' blog.id%}';" style="cursor: pointer;" >
+
+ <p>{{blog.body}}</p> 
+
+  </div>
+</div>    
+
+
+
+
+<div class="row">
+
+    <div class="col-8" onclick="window.location='{%url 'blog_detail' blog.id%}';" style="cursor: pointer;" >
+      <b>Author:</b> {{blog.author}}
+
+    </div>
+
+   
+</div>    
+
+
+<div class="row">
+
+    <div class="col-8" onclick="window.location='{%url 'blog_detail' blog.id%}';" style="cursor: pointer;" >
+      <b>Date:</b> {{blog.date_posted|date:'F d,Y'}}
+
+    </div>
+
+   
+</div> 
+<hr style="background-color: black"> 
+
+<br>
+<br>
+<br>
+ {%endfor%}
+
+ {%endblock content%}
